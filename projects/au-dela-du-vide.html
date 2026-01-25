@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Au-delà du vide | Lucas Matthes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: { extend: { colors: { 'bg-main': '#121212', 'bg-card': '#18181b', 'text-main': '#EDEDED' } } }
+        }
+    </script>
+    <style>
+        body { background-color: #121212; color: #EDEDED; font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <nav class="max-w-5xl mx-auto px-6 py-10">
+        <a href="../index.html" class="text-white/50 hover:text-white transition-colors flex items-center gap-2 text-sm font-medium">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+            </svg>
+            Retour au portfolio
+        </a>
+    </nav>
+
+    <main class="max-w-5xl mx-auto px-6 pb-20">
+        
+        <header class="mb-16">
+            <h1 class="text-5xl font-bold mb-6">Au-delà du vide</h1>
+            <div class="aspect-video w-full rounded-3xl overflow-hidden bg-zinc-900 border border-white/5">
+                <video controls autoplay muted loop class="w-full h-full object-cover">
+                    <source src="../Assets/CM.mp4" type="video/mp4">
+                </video>
+            </div>
+        </header>
+
+        <section class="grid md:grid-cols-3 gap-12 mb-20 border-t border-white/10 pt-10">
+            <div>
+                <h3 class="text-white/30 uppercase text-xs font-bold tracking-widest mb-2">Rôle</h3>
+                <p class="text-lg">Réalisateur & Étalonneur</p>
+            </div>
+            <div>
+                <h3 class="text-white/30 uppercase text-xs font-bold tracking-widest mb-2">Contexte</h3>
+                <p class="text-lg">Projet Universitaire - 2025</p>
+            </div>
+            <div>
+                <h3 class="text-white/30 uppercase text-xs font-bold tracking-widest mb-2">Outils</h3>
+                <p class="text-lg">Premiere Pro, DaVinci Resolve</p>
+            </div>
+        </section>
+
+        <section class="grid md:grid-cols-2 gap-16 mb-32 items-center">
+            <div>
+                <h2 class="text-3xl font-bold mb-6">L'intention créative</h2>
+                <p class="text-zinc-400 leading-relaxed text-lg mb-6">
+                    L'objectif de ce projet était de retranscrire une émotion brute à travers le silence. J'ai choisi de travailler sur des plans fixes très longs pour forcer le spectateur à observer les détails du décor.
+                </p>
+                <p class="text-zinc-400 leading-relaxed text-lg">
+                    Le défi technique majeur a été la gestion de la lumière naturelle en extérieur jour pour garder une cohérence visuelle tout au long du film.
+                </p>
+            </div>
+            <div class="rounded-2xl overflow-hidden border border-white/5">
+                <img src="../Assets/PHOTO_DA.jpg" alt="Coulisses" class="w-full">
+                <p class="p-4 text-xs text-zinc-500 italic text-center text-zinc-400 bg-white/5">Capture d'écran du workflow de montage.</p>
+            </div>
+        </section>
+
+        <section class="mb-32">
+            <h2 class="text-3xl font-bold mb-10 text-center">Travail de Colorimétrie</h2>
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="relative">
+                    <span class="absolute top-4 left-4 bg-black/50 px-3 py-1 rounded text-xs uppercase tracking-widest">Brut (Log)</span>
+                    <img src="../Assets/PHOTO_DA.jpg" class="rounded-xl w-full grayscale" alt="Avant">
+                </div>
+                <div class="relative">
+                    <span class="absolute top-4 left-4 bg-blue-600 px-3 py-1 rounded text-xs uppercase tracking-widest">Final</span>
+                    <img src="../Assets/PHOTO_DA.jpg" class="rounded-xl w-full" alt="Après">
+                </div>
+            </div>
+            <p class="mt-6 text-center text-zinc-500 italic">Glissez pour comparer la transformation de l'image (Simulation).</p>
+        </section>
+
+        <section class="border-t border-white/10 pt-20 text-center">
+            <h3 class="text-2xl font-bold mb-8">Envie de voir d'autres projets ?</h3>
+            <a href="../index.html" class="inline-block px-10 py-4 bg-white text-black font-bold rounded-xl hover:bg-zinc-200 transition-all">
+                Retour à l'accueil
+            </a>
+        </section>
+
+    </main>
+
+</body>
+</html>
