@@ -41,10 +41,11 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        /* Ratio 16/9 pour les vignettes */
         .card-media-container {
+            aspect-ratio: 16 / 9;
             background-color: #121212;
             width: 100%;
-            height: 100%;
             overflow: hidden;
             position: relative;
         }
@@ -53,17 +54,17 @@
             width: 100%;
             height: 100%;
             object-fit: cover; 
-            transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
         .group:hover .card-media {
-            transform: scale(1.03);
+            transform: scale(1.05);
         }
     </style>
 </head>
 <body class="bg-bg-main text-text-main font-sans antialiased">
 
-    <div class="max-w-5xl mx-auto px-6 md:px-12 pb-20">
+    <div class="max-w-6xl mx-auto px-6 md:px-12 pb-20">
 
         <header class="py-12 md:py-20 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
             <div>
@@ -74,7 +75,7 @@
             <nav>
                 <ul class="flex gap-8 text-sm font-medium text-text-muted">
                     <li><a href="#about" class="hover:text-white transition-colors duration-300">Bio</a></li>
-                    <li><a href="#work" class="hover:text-white transition-colors duration-300">Portfolio</a></li>
+                    <li><a href="#work" class="hover:text-white transition-colors duration-300">Projets</a></li>
                     <li><a href="#contact" class="hover:text-white transition-colors duration-300">Contact</a></li>
                 </ul>
             </nav>
@@ -82,24 +83,23 @@
         
         <div class="w-full h-px bg-white/10 mb-16"></div>
 
-        <section id="about" class="mb-32">
-            <div class="flex flex-col md:flex-row items-center gap-12 bg-bg-card p-8 md:p-12 rounded-3xl border border-white/5 shadow-2xl">
+        <section id="about" class="mb-24">
+            <div class="flex flex-col md:flex-row items-center gap-10 bg-bg-card p-8 rounded-3xl border border-white/5 shadow-2xl">
                 <div class="shrink-0">
-                    <div class="w-40 h-40 md:w-56 md:h-56 rounded-3xl overflow-hidden border border-white/10 shadow-inner">
+                    <div class="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border border-white/10 shadow-inner">
                         <img src="Assets/PP.jpg" 
                              alt="Lucas Matthes" 
                              class="w-full h-full object-cover transition-transform duration-700 hover:scale-110">
                     </div>
                 </div>
                 <div class="flex-1 text-center md:text-left">
-                    <h2 class="text-3xl font-bold mb-4 text-white tracking-tight">L'image comme langage.</h2>
                     <p class="text-text-muted leading-relaxed text-lg">
-                        Plume créative et technicien de l'image, je conçois des univers visuels où chaque cadre raconte une histoire. Spécialisé en <strong>réalisation et post-production</strong>, je fusionne maîtrise technique et vision artistique pour transformer des concepts en expériences immersives, de la fiction au brand content.
+                        Plume créative et technicien de l'image, je conçois des univers visuels où chaque cadre raconte une histoire. Spécialisé en <strong>réalisation et post-production</strong>, je fusionne maîtrise technique et vision artistique.
                     </p>
-                    <div class="mt-8 flex flex-wrap justify-center md:justify-start gap-3">
-                        <span class="px-4 py-1.5 text-xs font-semibold rounded-full border border-white/10 bg-white/5 text-text-main">Production Vidéo</span>
-                        <span class="px-4 py-1.5 text-xs font-semibold rounded-full border border-white/10 bg-white/5 text-text-main">Color Grading</span>
-                        <span class="px-4 py-1.5 text-xs font-semibold rounded-full border border-white/10 bg-white/5 text-text-main">Direction Artistique</span>
+                    <div class="mt-6 flex flex-wrap justify-center md:justify-start gap-3">
+                        <span class="px-3 py-1 text-xs font-semibold rounded-full border border-white/10 bg-white/5 text-text-main">Production Vidéo</span>
+                        <span class="px-3 py-1 text-xs font-semibold rounded-full border border-white/10 bg-white/5 text-text-main">Color Grading</span>
+                        <span class="px-3 py-1 text-xs font-semibold rounded-full border border-white/10 bg-white/5 text-text-main">Direction Artistique</span>
                     </div>
                 </div>
             </div>
@@ -107,110 +107,116 @@
 
         <section id="work" class="mb-32">
             
-            <div class="flex flex-wrap gap-4 mb-12">
-                <button onclick="filterProjects('all')" class="filter-btn active px-6 py-2.5 rounded-full text-sm font-semibold border border-white/10 bg-white text-black transition-all">Tout voir</button>
-                <button onclick="filterProjects('perso')" class="filter-btn px-6 py-2.5 rounded-full text-sm font-semibold border border-white/10 bg-transparent text-text-muted hover:text-white hover:border-white/20 transition-all">Projets Perso</button>
-                <button onclick="filterProjects('uni')" class="filter-btn px-6 py-2.5 rounded-full text-sm font-semibold border border-white/10 bg-transparent text-text-muted hover:text-white hover:border-white/20 transition-all">Projets Universitaires</button>
-                <button onclick="filterProjects('photo')" class="filter-btn px-6 py-2.5 rounded-full text-sm font-semibold border border-white/10 bg-transparent text-text-muted hover:text-white hover:border-white/20 transition-all">Photo</button>
+            <div class="flex flex-wrap justify-center md:justify-start gap-4 mb-12">
+                <button onclick="filterProjects('all')" class="filter-btn active px-6 py-2 rounded-full text-sm font-semibold border border-white/10 bg-white text-black transition-all">Tout</button>
+                <button onclick="filterProjects('perso')" class="filter-btn px-6 py-2 rounded-full text-sm font-semibold border border-white/10 bg-transparent text-text-muted hover:text-white hover:border-white/20 transition-all">Projets Perso</button>
+                <button onclick="filterProjects('uni')" class="filter-btn px-6 py-2 rounded-full text-sm font-semibold border border-white/10 bg-transparent text-text-muted hover:text-white hover:border-white/20 transition-all">Universitaire</button>
+                <button onclick="filterProjects('photo')" class="filter-btn px-6 py-2 rounded-full text-sm font-semibold border border-white/10 bg-transparent text-text-muted hover:text-white hover:border-white/20 transition-all">Photo</button>
             </div>
 
-            <div class="grid gap-16" id="project-container">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="project-container">
 
-                <a href="projects/au-dela-du-vide.html" 
-                   class="project-card block group relative bg-bg-card rounded-2xl overflow-hidden border border-white/5 hover:border-white/10 transition-all duration-500 hover:-translate-y-1" 
-                   data-category="uni">
-                    <div class="flex flex-col md:flex-row h-full">
-                        <div class="w-full md:w-1/2 h-72 md:h-96 card-media-container">
-                            <video autoplay loop muted playsinline class="card-media">
-                                <source src="Assets/CM.mp4" type="video/mp4">
-                            </video>
-                        </div>
-                        <div class="w-full md:w-1/2 p-10 md:p-14 flex flex-col justify-center">
-                            <span class="text-xs font-bold tracking-[0.2em] text-white/30 uppercase mb-3">Fiction • Réalisation</span>
-                            <h3 class="text-3xl font-bold text-white mb-5 leading-tight">Au-delà du vide</h3>
-                            <p class="text-text-muted leading-relaxed text-lg mb-0">
-                                Un court-métrage introspectif explorant les silences et l'absence. Un travail approfondi sur la colorimétrie et le rythme.
-                            </p>
-                            <span class="mt-6 text-sm font-bold text-white border-b border-white/30 pb-1 self-start w-max group-hover:border-white transition-colors">Voir le projet &rarr;</span>
-                        </div>
+                <a href="projects/night-ride.html" class="project-card group block fade-in" data-category="perso">
+                    <div class="card-media-container rounded-xl border border-white/5 group-hover:border-white/20 transition-all mb-4">
+                        <video autoplay loop muted playsinline class="card-media">
+                            <source src="Assets/night-ride.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold tracking-widest text-indigo-400 uppercase">Atmosphère</span>
+                        <h3 class="text-xl font-bold text-white mt-1 group-hover:underline decoration-white/30 underline-offset-4 transition-all">Night Ride</h3>
                     </div>
                 </a>
 
-                <a href="projects/FRAMMI.html" 
-                   class="project-card block group relative bg-bg-card rounded-2xl overflow-hidden border border-white/5 hover:border-white/10 transition-all duration-500 hover:-translate-y-1" 
-                   data-category="uni">
-                    <div class="flex flex-col md:flex-row h-full">
-                        <div class="w-full md:w-1/2 h-72 md:h-96 card-media-container">
-                            <video autoplay loop muted playsinline class="card-media">
-                                <source src="Assets/FRAMMI_1.mp4" type="video/mp4">
-                            </video>
-                        </div>
-                        <div class="w-full md:w-1/2 p-10 md:p-14 flex flex-col justify-center">
-                            <span class="text-xs font-bold tracking-[0.2em] text-white/30 uppercase mb-3">Event • Social Media</span>
-                            <h3 class="text-3xl font-bold text-white mb-5 leading-tight">FRAMMI</h3>
-                            <p class="text-text-muted leading-relaxed text-lg mb-0">
-                                Captation et montage d'un aftermovie électrique. Une série de capsules optimisées pour l'impact social media.
-                            </p>
-                            <span class="mt-6 text-sm font-bold text-white border-b border-white/30 pb-1 self-start w-max group-hover:border-white transition-colors">Voir le projet &rarr;</span>
-                        </div>
+                <a href="projects/page-blanche.html" class="project-card group block fade-in" data-category="perso">
+                    <div class="card-media-container rounded-xl border border-white/5 group-hover:border-white/20 transition-all mb-4">
+                        <video autoplay loop muted playsinline class="card-media">
+                            <source src="Assets/page-blanche.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold tracking-widest text-indigo-400 uppercase">Concept</span>
+                        <h3 class="text-xl font-bold text-white mt-1 group-hover:underline decoration-white/30 underline-offset-4 transition-all">Page Blanche</h3>
                     </div>
                 </a>
 
-                <a href="projects/game-and-vibes.html" 
-                   class="project-card block group relative bg-bg-card rounded-2xl overflow-hidden border border-white/5 hover:border-white/10 transition-all duration-500 hover:-translate-y-1" 
-                   data-category="uni">
-                    <div class="flex flex-col md:flex-row h-full">
-                        <div class="w-full md:w-1/2 h-72 md:h-96 card-media-container">
-                            <video autoplay loop muted playsinline class="card-media">
-                                <source src="Assets/GV_1.mp4" type="video/mp4">
-                            </video>
-                        </div>
-                        <div class="w-full md:w-1/2 p-10 md:p-14 flex flex-col justify-center">
-                            <span class="text-xs font-bold tracking-[0.2em] text-white/30 uppercase mb-3">Média • Branding Visuel</span>
-                            <h3 class="text-3xl font-bold text-white mb-5 leading-tight">Game & Vibes</h3>
-                            <p class="text-text-muted leading-relaxed text-lg mb-0">
-                                Création d'un média digital de A à Z. Conception de la charte graphique et production de contenus vidéo dynamiques.
-                            </p>
-                            <span class="mt-6 text-sm font-bold text-white border-b border-white/30 pb-1 self-start w-max group-hover:border-white transition-colors">Voir le projet &rarr;</span>
-                        </div>
+                <a href="projects/monster.html" class="project-card group block fade-in" data-category="perso">
+                    <div class="card-media-container rounded-xl border border-white/5 group-hover:border-white/20 transition-all mb-4">
+                        <img src="Assets/monster.jpg" class="card-media" alt="Monster Art">
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold tracking-widest text-indigo-400 uppercase">Digital Art</span>
+                        <h3 class="text-xl font-bold text-white mt-1 group-hover:underline decoration-white/30 underline-offset-4 transition-all">Monster</h3>
                     </div>
                 </a>
 
-                <a href="projects/lumieres-interview.html" 
-                   class="project-card block group relative bg-bg-card rounded-2xl overflow-hidden border border-white/5 hover:border-white/10 transition-all duration-500 hover:-translate-y-1" 
-                   data-category="uni">
-                    <div class="flex flex-col md:flex-row h-full">
-                        <div class="w-full md:w-1/2 h-72 md:h-96 card-media-container">
-                            <video autoplay loop muted playsinline class="card-media">
-                                <source src="Assets/INTERVIEW.mp4" type="video/mp4">
-                            </video>
-                        </div>
-                        <div class="w-full md:w-1/2 p-10 md:p-14 flex flex-col justify-center">
-                            <span class="text-xs font-bold tracking-[0.2em] text-white/30 uppercase mb-3">Studio • Éclairage</span>
-                            <h3 class="text-3xl font-bold text-white mb-5 leading-tight">Lumières Interview</h3>
-                            <p class="text-text-muted leading-relaxed text-lg mb-0">
-                                Exercice de précision sur le portrait filmé. Maîtrise des ombres et de la lumière trois points.
-                            </p>
-                            <span class="mt-6 text-sm font-bold text-white border-b border-white/30 pb-1 self-start w-max group-hover:border-white transition-colors">Voir le projet &rarr;</span>
-                        </div>
+                <a href="projects/badcar.html" class="project-card group block fade-in" data-category="uni">
+                    <div class="card-media-container rounded-xl border border-white/5 group-hover:border-white/20 transition-all mb-4">
+                        <video autoplay loop muted playsinline class="card-media">
+                            <source src="Assets/badcar.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold tracking-widest text-emerald-400 uppercase">Fiction</span>
+                        <h3 class="text-xl font-bold text-white mt-1 group-hover:underline decoration-white/30 underline-offset-4 transition-all">Bad Car</h3>
                     </div>
                 </a>
 
-                <a href="projects/artemyx.html" 
-                   class="project-card block group relative bg-bg-card rounded-2xl overflow-hidden border border-white/5 hover:border-white/10 transition-all duration-500 hover:-translate-y-1" 
-                   data-category="photo">
-                    <div class="flex flex-col md:flex-row h-full">
-                        <div class="w-full md:w-1/2 h-72 md:h-96 card-media-container">
-                            <img src="Assets/PHOTO_DA.jpg" class="card-media" alt="Shooting Artémyx">
-                        </div>
-                        <div class="w-full md:w-1/2 p-10 md:p-14 flex flex-col justify-center">
-                            <span class="text-xs font-bold tracking-[0.2em] text-white/30 uppercase mb-3">Mode • Éditorial</span>
-                            <h3 class="text-3xl font-bold text-white mb-5 leading-tight">Campagne Artémyx</h3>
-                            <p class="text-text-muted leading-relaxed text-lg mb-0">
-                                Direction artistique pour la marque Artémyx. Un shooting urbain aux compositions millimétrées.
-                            </p>
-                            <span class="mt-6 text-sm font-bold text-white border-b border-white/30 pb-1 self-start w-max group-hover:border-white transition-colors">Voir le projet &rarr;</span>
-                        </div>
+                <a href="projects/au-dela-du-vide.html" class="project-card group block fade-in" data-category="uni">
+                    <div class="card-media-container rounded-xl border border-white/5 group-hover:border-white/20 transition-all mb-4">
+                        <video autoplay loop muted playsinline class="card-media">
+                            <source src="Assets/CM.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold tracking-widest text-emerald-400 uppercase">Court Métrage</span>
+                        <h3 class="text-xl font-bold text-white mt-1 group-hover:underline decoration-white/30 underline-offset-4 transition-all">Au-delà du vide</h3>
+                    </div>
+                </a>
+
+                <a href="projects/FRAMMI.html" class="project-card group block fade-in" data-category="uni">
+                    <div class="card-media-container rounded-xl border border-white/5 group-hover:border-white/20 transition-all mb-4">
+                        <video autoplay loop muted playsinline class="card-media">
+                            <source src="Assets/FRAMMI_1.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold tracking-widest text-emerald-400 uppercase">Event</span>
+                        <h3 class="text-xl font-bold text-white mt-1 group-hover:underline decoration-white/30 underline-offset-4 transition-all">FRAMMI</h3>
+                    </div>
+                </a>
+
+                <a href="projects/game-and-vibes.html" class="project-card group block fade-in" data-category="uni">
+                    <div class="card-media-container rounded-xl border border-white/5 group-hover:border-white/20 transition-all mb-4">
+                        <video autoplay loop muted playsinline class="card-media">
+                            <source src="Assets/GV_1.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold tracking-widest text-emerald-400 uppercase">Branding</span>
+                        <h3 class="text-xl font-bold text-white mt-1 group-hover:underline decoration-white/30 underline-offset-4 transition-all">Game & Vibes</h3>
+                    </div>
+                </a>
+
+                <a href="projects/lumieres-interview.html" class="project-card group block fade-in" data-category="uni">
+                    <div class="card-media-container rounded-xl border border-white/5 group-hover:border-white/20 transition-all mb-4">
+                        <video autoplay loop muted playsinline class="card-media">
+                            <source src="Assets/INTERVIEW.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold tracking-widest text-emerald-400 uppercase">Studio</span>
+                        <h3 class="text-xl font-bold text-white mt-1 group-hover:underline decoration-white/30 underline-offset-4 transition-all">Lumières Interview</h3>
+                    </div>
+                </a>
+
+                <a href="projects/artemyx.html" class="project-card group block fade-in" data-category="photo">
+                    <div class="card-media-container rounded-xl border border-white/5 group-hover:border-white/20 transition-all mb-4">
+                        <img src="Assets/PHOTO_DA.jpg" class="card-media" alt="Shooting Artémyx">
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold tracking-widest text-rose-400 uppercase">Campagne</span>
+                        <h3 class="text-xl font-bold text-white mt-1 group-hover:underline decoration-white/30 underline-offset-4 transition-all">Artémyx</h3>
                     </div>
                 </a>
 
@@ -235,7 +241,7 @@
                         <span class="text-sm font-medium">Instagram</span>
                     </a>
                     
-                    <a href="mailto:contact@lucasmatthes.com" class="flex items-center gap-2 text-text-muted hover:text-white transition-all hover:scale-105">
+                    <a href="mailto:lucasmatthes04@gmail.com" class="flex items-center gap-2 text-text-muted hover:text-white transition-all hover:scale-105">
                         <img src="Assets/ico/email.png" alt="Email" class="w-5 h-5 object-contain">
                         <span class="text-sm font-medium">Email</span>
                     </a>
@@ -264,8 +270,9 @@
 
             const projects = document.querySelectorAll('.project-card');
             projects.forEach(card => {
-                card.classList.remove('fade-in');
-                void card.offsetWidth; 
+                card.classList.remove('fade-in'); // Reset animation
+                void card.offsetWidth; // Trigger reflow
+                
                 if (category === 'all' || card.getAttribute('data-category') === category) {
                     card.style.display = 'block';
                     card.classList.add('fade-in');
