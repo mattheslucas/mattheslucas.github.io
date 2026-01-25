@@ -228,7 +228,158 @@
                     <h4 class="text-white font-bold text-xl tracking-tight">Lucas Matthes</h4>
                     <p class="text-text-muted text-sm mt-2 font-light italic">Créateur de mondes visuels.</p>
                 </div>
-                <div class="flex items-center gap-10">
-                    <a href="https://www.linkedin.com/in/lucas-matthes-76a281296/" target="_blank" class="text-text-muted hover:text-white transition-all hover:scale-105">LinkedIn</a>
-                    <a href="#" class="text-text-muted hover:text-white transition-all hover:scale-105">Instagram</a>
-                    <a href="mailto:contact@lucasmatthes.com" class="text-text-muted hover:text-white transition-all hover:scale-105">Email</a>
+                
+                <div class="flex flex-wrap justify-center items-center gap-8 md:gap-10">
+                    <a href="https://www.linkedin.com/in/lucas-matthes-76a281296/" target="_blank" class="flex items-center gap-2 text-text-muted hover:text-white transition-all hover:scale-105">
+                        <img src="Assets/ico/linkedin.png" alt="LinkedIn" class="w-5 h-5 object-contain">
+                        <span class="text-sm font-medium">LinkedIn</span>
+                    </a>
+                    
+                    <a href="#" class="flex items-center gap-2 text-text-muted hover:text-white transition-all hover:scale-105">
+                        <img src="Assets/ico/instagram.png" alt="Instagram" class="w-5 h-5 object-contain">
+                        <span class="text-sm font-medium">Instagram</span>
+                    </a>
+                    
+                    <a href="mailto:contact@lucasmatthes.com" class="flex items-center gap-2 text-text-muted hover:text-white transition-all hover:scale-105">
+                        <img src="Assets/ico/email.png" alt="Email" class="w-5 h-5 object-contain">
+                        <span class="text-sm font-medium">Email</span>
+                    </a>
+                </div>
+                
+                <a href="#" class="px-8 py-4 bg-white text-black font-bold rounded-xl hover:bg-zinc-200 transition-all shadow-xl hover:-translate-y-1">
+                    Télécharger CV
+                </a>
+            </div>
+            <p class="text-center text-white/10 text-xs mt-16 font-mono tracking-widest uppercase">© 2026 Lucas Matthes • All rights reserved</p>
+        </footer>
+
+    </div>
+
+    <div id="lightbox" class="fixed inset-0 z-50 bg-black/98 backdrop-blur-xl items-center justify-center p-4 md:p-12 transition-all duration-300">
+        <button onclick="closeLightbox()" class="absolute top-8 right-8 text-white/40 hover:text-white z-50 p-2 bg-white/5 rounded-full transition-all">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+
+        <div class="relative w-full h-full flex items-center justify-center">
+            <button id="prevBtn" onclick="prevSlide()" class="absolute left-0 md:left-4 z-40 p-4 text-white/20 hover:text-white transition-all bg-white/5 rounded-full hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                </svg>
+            </button>
+
+            <div id="lightbox-content" class="w-full h-full flex items-center justify-center"></div>
+
+            <button id="nextBtn" onclick="nextSlide()" class="absolute right-0 md:right-4 z-40 p-4 text-white/20 hover:text-white transition-all bg-white/5 rounded-full hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                </svg>
+            </button>
+        </div>
+        
+        <div id="slide-counter" class="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/30 font-mono text-xs bg-white/5 px-4 py-2 rounded-full border border-white/5"></div>
+    </div>
+
+    <script>
+        function filterProjects(category) {
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-white', 'text-black');
+                btn.classList.add('bg-transparent', 'text-text-muted');
+                if (btn.getAttribute('onclick').includes(category)) {
+                    btn.classList.remove('bg-transparent', 'text-text-muted');
+                    btn.classList.add('bg-white', 'text-black');
+                }
+            });
+
+            const projects = document.querySelectorAll('.project-card');
+            projects.forEach(card => {
+                card.classList.remove('fade-in');
+                void card.offsetWidth; 
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'block';
+                    card.classList.add('fade-in');
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        let currentMediaList = [];
+        let currentIndex = 0;
+        const lightbox = document.getElementById('lightbox');
+        const container = document.getElementById('lightbox-content');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const counter = document.getElementById('slide-counter');
+
+        function openLightbox(mediaArray) {
+            currentMediaList = mediaArray;
+            currentIndex = 0;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden'; 
+            renderMedia();
+            updateButtons();
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            container.innerHTML = ''; 
+            document.body.style.overflow = 'auto'; 
+        }
+
+        function renderMedia() {
+            const file = currentMediaList[currentIndex];
+            const isVideo = file.toLowerCase().endsWith('.mp4') || file.toLowerCase().endsWith('.mov') || file.toLowerCase().endsWith('.webm');
+
+            container.innerHTML = ''; 
+
+            if (isVideo) {
+                const video = document.createElement('video');
+                video.controls = true;
+                video.autoplay = true;
+                video.className = "lightbox-media"; 
+                const sourceMP4 = document.createElement('source');
+                sourceMP4.src = file;
+                sourceMP4.type = "video/mp4";
+                video.appendChild(sourceMP4);
+                container.appendChild(video);
+            } else {
+                const img = document.createElement('img');
+                img.src = file;
+                img.className = "lightbox-media";
+                container.appendChild(img);
+            }
+            
+            if(currentMediaList.length > 1) {
+                counter.innerText = `${currentIndex + 1} / ${currentMediaList.length}`;
+                counter.style.display = 'block';
+            } else {
+                counter.style.display = 'none';
+            }
+        }
+
+        function nextSlide() { if (currentIndex < currentMediaList.length - 1) { currentIndex++; renderMedia(); updateButtons(); } }
+        function prevSlide() { if (currentIndex > 0) { currentIndex--; renderMedia(); updateButtons(); } }
+
+        function updateButtons() {
+            if (currentMediaList.length > 1) {
+                prevBtn.style.display = currentIndex > 0 ? 'block' : 'none';
+                nextBtn.style.display = currentIndex < currentMediaList.length - 1 ? 'block' : 'none';
+            } else {
+                prevBtn.style.display = 'none';
+                nextBtn.style.display = 'none';
+            }
+        }
+
+        lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            if (e.key === "Escape") closeLightbox();
+            if (e.key === "ArrowRight") nextSlide();
+            if (e.key === "ArrowLeft") prevSlide();
+        });
+    </script>
+</body>
+</html>
