@@ -13,12 +13,14 @@
     </script>
     <style>
         body { background-color: #121212; color: #EDEDED; font-family: 'Inter', sans-serif; }
+        .fade-in { animation: fadeIn 0.8s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body class="antialiased">
 
-    <nav class="max-w-5xl mx-auto px-6 py-10">
-        <a href="../index.html" class="text-white/50 hover:text-white transition-colors flex items-center gap-2 text-sm font-medium">
+    <nav class="max-w-6xl mx-auto px-6 py-10">
+        <a href="../index.html" class="text-white/50 hover:text-white transition-colors flex items-center gap-2 text-sm font-medium w-max">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
             </svg>
@@ -26,68 +28,89 @@
         </a>
     </nav>
 
-    <main class="max-w-5xl mx-auto px-6 pb-20">
+    <main class="max-w-5xl mx-auto px-6 pb-24 fade-in">
         
         <header class="mb-16">
-            <h1 class="text-5xl font-bold mb-6">Au-delà du vide</h1>
-            <div class="aspect-video w-full rounded-3xl overflow-hidden bg-zinc-900 border border-white/5">
-                <video controls autoplay muted loop class="w-full h-full object-cover">
+            <span class="text-emerald-400 font-bold tracking-widest uppercase text-xs mb-2 block">Court-Métrage • Fiction</span>
+            <h1 class="text-4xl md:text-5xl font-bold mb-8">Au-delà du vide</h1>
+            
+            <div class="w-full rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black">
+                <video controls class="w-full h-auto">
                     <source src="../Assets/CM.mp4" type="video/mp4">
+                    Votre navigateur ne supporte pas la lecture de vidéos.
                 </video>
             </div>
         </header>
 
-        <section class="grid md:grid-cols-3 gap-12 mb-20 border-t border-white/10 pt-10">
+        <section class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20 border-y border-white/10 py-8">
             <div>
-                <h3 class="text-white/30 uppercase text-xs font-bold tracking-widest mb-2">Rôle</h3>
-                <p class="text-lg">Réalisateur & Étalonneur</p>
+                <h3 class="text-white/40 uppercase text-[10px] font-bold tracking-widest mb-1">Mes Rôles</h3>
+                <p class="text-base font-medium">Scénario, Réalisation, Son</p>
             </div>
             <div>
-                <h3 class="text-white/30 uppercase text-xs font-bold tracking-widest mb-2">Contexte</h3>
-                <p class="text-lg">Projet Universitaire - 2025</p>
+                <h3 class="text-white/40 uppercase text-[10px] font-bold tracking-widest mb-1">Direction</h3>
+                <p class="text-base font-medium">Direction d'acteurs</p>
             </div>
             <div>
-                <h3 class="text-white/30 uppercase text-xs font-bold tracking-widest mb-2">Outils</h3>
-                <p class="text-lg">Premiere Pro, DaVinci Resolve</p>
+                <h3 class="text-white/40 uppercase text-[10px] font-bold tracking-widest mb-1">Narration</h3>
+                <p class="text-base font-medium">L'Arlésienne (Personnage absent)</p>
+            </div>
+            <div>
+                <h3 class="text-white/40 uppercase text-[10px] font-bold tracking-widest mb-1">Technique</h3>
+                <p class="text-base font-medium">Leitmotiv & Colorimétrie</p>
             </div>
         </section>
 
-        <section class="grid md:grid-cols-2 gap-16 mb-32 items-center">
-            <div>
-                <h2 class="text-3xl font-bold mb-6">L'intention créative</h2>
-                <p class="text-zinc-400 leading-relaxed text-lg mb-6">
-                    L'objectif de ce projet était de retranscrire une émotion brute à travers le silence. J'ai choisi de travailler sur des plans fixes très longs pour forcer le spectateur à observer les détails du décor.
+        <section class="grid md:grid-cols-12 gap-12 mb-24">
+            <div class="md:col-span-6">
+                <h2 class="text-2xl font-bold mb-6 text-white">Le Défi Créatif</h2>
+                <p class="text-zinc-400 leading-relaxed mb-6">
+                    Écrit entièrement de toutes pièces, ce court-métrage est né de contraintes scénaristiques fortes imposées lors de la formation. L'exercice consistait à intégrer organiquement trois éléments techniques à l'histoire :
                 </p>
-                <p class="text-zinc-400 leading-relaxed text-lg">
-                    Le défi technique majeur a été la gestion de la lumière naturelle en extérieur jour pour garder une cohérence visuelle tout au long du film.
+                <ul class="list-disc list-inside text-zinc-400 space-y-2 mb-6">
+                    <li><strong>L'Arlésienne :</strong> Construire la narration autour d'un personnage principal qui n'apparaît jamais à l'écran.</li>
+                    <li><strong>La Colorimétrie :</strong> Un passage narratif justifié uniquement par un changement d'étalonnage.</li>
+                    <li><strong>Le Leitmotiv :</strong> Une structure rythmique qui se répète pour marquer la progression (ou la stagnation) du récit.</li>
+                </ul>
+            </div>
+            
+            <div class="md:col-span-6">
+                <h2 class="text-2xl font-bold mb-6 text-white">Réalisation & Son</h2>
+                <p class="text-zinc-400 leading-relaxed mb-6">
+                    Sur ce projet, je me suis concentré sur la <strong>direction d'acteurs</strong> et la <strong>gestion sonore</strong>, laissant le montage à un collaborateur pour me focaliser sur l'intention brute au tournage.
+                </p>
+                <p class="text-zinc-400 leading-relaxed">
+                    J'ai également réalisé tout le storyboard en amont pour anticiper les cadres complexes liés à l'absence du personnage (suggérer sa présence sans jamais le montrer).
                 </p>
             </div>
-            <div class="rounded-2xl overflow-hidden border border-white/5">
-                <img src="../Assets/PHOTO_DA.jpg" alt="Coulisses" class="w-full">
-                <p class="p-4 text-xs text-zinc-500 italic text-center text-zinc-400 bg-white/5">Capture d'écran du workflow de montage.</p>
+        </section>
+
+        <section class="mb-24">
+            <h3 class="text-xl font-bold mb-8">Documents de Production</h3>
+            <div class="grid md:grid-cols-2 gap-8">
+                
+                <div class="rounded-xl overflow-hidden border border-white/10 group">
+                    <div class="w-full h-64 bg-white/5 flex items-center justify-center text-white/20 italic">
+                        Image Storyboard (À venir)
+                    </div>
+                    </div>
+
+                <div class="rounded-xl overflow-hidden border border-white/10 group">
+                    <div class="w-full h-64 bg-white/5 flex items-center justify-center text-white/20 italic">
+                        Photo Tournage (À venir)
+                    </div>
+                    </div>
+
             </div>
         </section>
 
-        <section class="mb-32">
-            <h2 class="text-3xl font-bold mb-10 text-center">Travail de Colorimétrie</h2>
-            <div class="grid md:grid-cols-2 gap-4">
-                <div class="relative">
-                    <span class="absolute top-4 left-4 bg-black/50 px-3 py-1 rounded text-xs uppercase tracking-widest">Brut (Log)</span>
-                    <img src="../Assets/PHOTO_DA.jpg" class="rounded-xl w-full grayscale" alt="Avant">
-                </div>
-                <div class="relative">
-                    <span class="absolute top-4 left-4 bg-blue-600 px-3 py-1 rounded text-xs uppercase tracking-widest">Final</span>
-                    <img src="../Assets/PHOTO_DA.jpg" class="rounded-xl w-full" alt="Après">
-                </div>
+        <section class="border-t border-white/10 pt-16 text-center">
+            <h3 class="text-2xl font-bold mb-6">Voir d'autres projets</h3>
+            <div class="flex justify-center gap-4">
+                <a href="../index.html" class="px-8 py-3 bg-white/5 hover:bg-white text-white hover:text-black border border-white/10 rounded-full transition-all font-medium text-sm">
+                    Retour à l'accueil
+                </a>
             </div>
-            <p class="mt-6 text-center text-zinc-500 italic">Glissez pour comparer la transformation de l'image (Simulation).</p>
-        </section>
-
-        <section class="border-t border-white/10 pt-20 text-center">
-            <h3 class="text-2xl font-bold mb-8">Envie de voir d'autres projets ?</h3>
-            <a href="../index.html" class="inline-block px-10 py-4 bg-white text-black font-bold rounded-xl hover:bg-zinc-200 transition-all">
-                Retour à l'accueil
-            </a>
         </section>
 
     </main>
