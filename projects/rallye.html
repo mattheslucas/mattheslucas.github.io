@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rallye Vidéo 2026 | Lucas Matthes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: { extend: { colors: { 'bg-main': '#121212', 'bg-card': '#18181b', 'text-main': '#EDEDED' } } }
+        }
+    </script>
+    <style>
+        body { background-color: #121212; color: #EDEDED; font-family: 'Inter', sans-serif; }
+        .fade-in { animation: fadeIn 0.8s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body class="antialiased">
+
+    <nav class="max-w-6xl mx-auto px-6 py-10">
+        <a href="../index.html" class="text-white/50 hover:text-white transition-colors flex items-center gap-2 text-sm font-medium w-max">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+            </svg>
+            Retour au portfolio
+        </a>
+    </nav>
+
+    <main class="max-w-5xl mx-auto px-6 pb-24 fade-in">
+        
+        <header class="mb-16">
+            <span class="text-emerald-400 font-bold tracking-widest uppercase text-xs mb-2 block">Organisation • Événementiel</span>
+            <h1 class="text-4xl md:text-5xl font-bold mb-8">Rallye Vidéo 2026</h1>
+        </header>
+
+        <section class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20 border-y border-white/10 py-8">
+            <div>
+                <h3 class="text-white/40 uppercase text-[10px] font-bold tracking-widest mb-1">Rôle</h3>
+                <p class="text-base font-medium">Organisateur & Stratège</p>
+            </div>
+            <div>
+                <h3 class="text-white/40 uppercase text-[10px] font-bold tracking-widest mb-1">Concept</h3>
+                <p class="text-base font-medium">Challenge 24h Chrono</p>
+            </div>
+            <div>
+                <h3 class="text-white/40 uppercase text-[10px] font-bold tracking-widest mb-1">Missions</h3>
+                <p class="text-base font-medium">Plan de Comm / Aftermovie</p>
+            </div>
+            <div>
+                <h3 class="text-white/40 uppercase text-[10px] font-bold tracking-widest mb-1">Date</h3>
+                <p class="text-base font-medium">Édition 2026</p>
+            </div>
+        </section>
+
+        <section class="mb-24 max-w-3xl">
+            <h2 class="text-2xl font-bold mb-6 text-white">Le Concept de l'Événement</h2>
+            <p class="text-zinc-400 leading-relaxed mb-6">
+                Le Rallye Vidéo est un marathon créatif : un thème imposé, 24 heures, et une équipe pour réaliser un court-métrage de A à Z.
+            </p>
+            <p class="text-zinc-400 leading-relaxed">
+                J'ai piloté l'organisation de l'édition 2026, de la logistique à la diffusion. Mes tâches principales incluaient l'élaboration de la <strong>stratégie et du plan de communication</strong>, l'écriture des scénarios pour les capsules promotionnelles, ainsi que la captation vidéo (caméraman) pour l'aftermovie officiel.
+            </p>
+        </section>
+
+        <div class="space-y-24 mb-32">
+            <h2 class="text-3xl font-bold text-white mb-12 border-b border-white/10 pb-4">Campagne de Communication</h2>
+
+            <section class="grid md:grid-cols-2 gap-10 items-center">
+                <div class="w-full rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black">
+                    <video controls class="w-full h-auto">
+                        <source src="../Assets/rallye_1.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Teaser Lancement</h3>
+                    <p class="text-zinc-400 leading-relaxed">
+                        Première étape de la stratégie de communication : annoncer l'événement et susciter l'intérêt des participants potentiels.
+                    </p>
+                </div>
+            </section>
+
+            <section class="grid md:grid-cols-2 gap-10 items-center md:flex-row-reverse">
+                <div class="w-full rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black md:order-last">
+                    <video controls class="w-full h-auto">
+                        <source src="../Assets/rallye_2.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Capsule Thématique</h3>
+                    <p class="text-zinc-400 leading-relaxed">
+                        Déclinaison du concept sur les réseaux sociaux pour maintenir l'engagement et dévoiler progressivement les indices sur le thème.
+                    </p>
+                </div>
+            </section>
+
+            <section class="grid md:grid-cols-2 gap-10 items-center">
+                <div class="w-full rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black">
+                    <video controls class="w-full h-auto">
+                        <source src="../Assets/rallye_3.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Présentation des Prix</h3>
+                    <p class="text-zinc-400 leading-relaxed">
+                        Mise en avant des récompenses et des partenaires pour motiver les équipes à se surpasser.
+                    </p>
+                </div>
+            </section>
+
+            <section class="grid md:grid-cols-2 gap-10 items-center md:flex-row-reverse">
+                <div class="w-full rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black md:order-last">
+                    <video controls class="w-full h-auto">
+                        <source src="../Assets/rallye_4.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Aftermovie</h3>
+                    <p class="text-zinc-400 leading-relaxed">
+                        Retour en images sur les 24h de l'événement. J'ai assuré le rôle de cadreur pour capturer l'ambiance, le stress et l'euphorie des participants.
+                    </p>
+                </div>
+            </section>
+        </div>
+
+        <section class="bg-white/5 rounded-3xl p-8 md:p-12 border border-white/10">
+            <span class="text-indigo-400 font-bold tracking-widest uppercase text-xs mb-4 block">Participation Créative • 24H Chrono</span>
+            <h2 class="text-3xl font-bold text-white mb-8">Court-Métrage : "Tout ça pour ça"</h2>
+            
+            <div class="grid md:grid-cols-12 gap-10">
+                <div class="md:col-span-7">
+                    <div class="w-full rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black">
+                        <video controls class="w-full h-auto">
+                            <source src="../Assets/rallye_5.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+
+                <div class="md:col-span-5 flex flex-col justify-center">
+                    <p class="text-zinc-300 leading-relaxed mb-6">
+                        En parallèle de l'organisation, j'ai contribué à la phase de <strong>conception narrative</strong> de mon groupe. N'ayant pas pu assurer le tournage à cause de la préparation logistique de la salle de projection, je me suis concentré sur l'écriture.
+                    </p>
+                    <h4 class="text-white font-bold mb-2">Synopsis & Métaphore</h4>
+                    <p class="text-zinc-400 text-sm leading-relaxed">
+                        L'histoire met en parallèle la préparation méticuleuse d'un personnage pour son travail et un verre d'eau qui se remplit inexorablement. Ce verre symbolise l'accumulation du stress et de la pression sociale.
+                    </p>
+                    <p class="text-zinc-400 text-sm leading-relaxed mt-4">
+                        Au moment où le personnage arrive enfin face à son bureau, le verre déborde. La rupture est instantanée : il se retrouve transporté sur un ponton paisible, ayant tout lâché. C'est l'illustration littérale du thème : <em>"Tout ça"</em> (la préparation, le stress) <em>"pour ça"</em> (abandonner et partir se détendre).
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="border-t border-white/10 pt-16 text-center mt-20">
+            <h3 class="text-2xl font-bold mb-6">Voir d'autres projets</h3>
+            <div class="flex justify-center gap-4">
+                <a href="../index.html" class="px-8 py-3 bg-white/5 hover:bg-white text-white hover:text-black border border-white/10 rounded-full transition-all font-medium text-sm">
+                    Retour à l'accueil
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>
