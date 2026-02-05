@@ -41,7 +41,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Ratio 16/9 pour les vignettes */
         .card-media-container {
             aspect-ratio: 16 / 9;
             background-color: #121212;
@@ -98,7 +97,7 @@
                     </p>
                     <div class="mt-6 flex flex-wrap justify-center md:justify-start gap-3">
                         <span class="px-3 py-1 text-xs font-semibold rounded-full border border-white/10 bg-white/5 text-text-main">Production Vidéo</span>
-                        <span class="px-3 py-1 text-xs font-semibold rounded-full border border-white/10 bg-white/5 text-text-main">Color Grading</span>
+                        <span class="px-3 py-1 text-xs font-semibold rounded-full border border-white/10 bg-white/5 text-text-main">Montage</span>
                         <span class="px-3 py-1 text-xs font-semibold rounded-full border border-white/10 bg-white/5 text-text-main">Direction Artistique</span>
                     </div>
                 </div>
@@ -107,23 +106,62 @@
 
         <section id="work" class="mb-32">
             
-            <div class="flex flex-wrap justify-center md:justify-start gap-4 mb-12">
-                <button onclick="filterProjects('all')" class="filter-btn active px-6 py-2 rounded-full text-sm font-semibold border border-white/10 bg-white text-black transition-all">Tout</button>
-                <button onclick="filterProjects('perso')" class="filter-btn px-6 py-2 rounded-full text-sm font-semibold border border-white/10 bg-transparent text-text-muted hover:text-white hover:border-white/20 transition-all">Projets Perso</button>
-                <button onclick="filterProjects('uni')" class="filter-btn px-6 py-2 rounded-full text-sm font-semibold border border-white/10 bg-transparent text-text-muted hover:text-white hover:border-white/20 transition-all">Universitaire</button>
-                <button onclick="filterProjects('photo')" class="filter-btn px-6 py-2 rounded-full text-sm font-semibold border border-white/10 bg-transparent text-text-muted hover:text-white hover:border-white/20 transition-all">Photo</button>
+            <div class="flex flex-wrap justify-center md:justify-start gap-3 mb-12">
+                <button onclick="filterProjects('all')" class="filter-btn active px-5 py-2 rounded-full text-sm font-semibold border border-white/10 bg-white text-black transition-all">Tout</button>
+                <button onclick="filterProjects('event')" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold border border-white/10 bg-transparent text-text-muted hover:text-white hover:border-white/20 transition-all">Événementiel</button>
+                <button onclick="filterProjects('short')" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold border border-white/10 bg-transparent text-text-muted hover:text-white hover:border-white/20 transition-all">Court-métrages</button>
+                <button onclick="filterProjects('perso')" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold border border-white/10 bg-transparent text-text-muted hover:text-white hover:border-white/20 transition-all">Projets Perso</button>
+                <button onclick="filterProjects('tech')" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold border border-white/10 bg-transparent text-text-muted hover:text-white hover:border-white/20 transition-all">Technique</button>
+                <button onclick="filterProjects('media')" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold border border-white/10 bg-transparent text-text-muted hover:text-white hover:border-white/20 transition-all">Média</button>
+                <button onclick="filterProjects('photo')" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold border border-white/10 bg-transparent text-text-muted hover:text-white hover:border-white/20 transition-all">Photo</button>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="project-container">
 
-                <a href="projects/night-drive.html" class="project-card group block fade-in" data-category="perso">
+                <a href="projects/FRAMMI.html" class="project-card group block fade-in" data-category="event">
                     <div class="card-media-container rounded-xl border border-white/5 group-hover:border-white/20 transition-all mb-4">
                         <video autoplay loop muted playsinline class="card-media">
-                            <source src="Assets/night-drive.mp4" type="video/mp4">
+                            <source src="Assets/FRAMMI_1.mp4" type="video/mp4">
                         </video>
                     </div>
                     <div>
-                        <span class="text-xs font-bold tracking-widest text-indigo-400 uppercase">Atmosphère</span>
+                        <span class="text-xs font-bold tracking-widest text-emerald-400 uppercase">Événementiel</span>
+                        <h3 class="text-xl font-bold text-white mt-1 group-hover:underline decoration-white/30 underline-offset-4 transition-all">FRAMMI Awards</h3>
+                    </div>
+                </a>
+
+                <a href="projects/rallye.html" class="project-card group block fade-in" data-category="event short">
+                    <div class="card-media-container rounded-xl border border-white/5 group-hover:border-white/20 transition-all mb-4">
+                        <video autoplay loop muted playsinline class="card-media">
+                            <source src="Assets/rallye.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold tracking-widest text-emerald-400 uppercase">Événement • Court-Métrage</span>
+                        <h3 class="text-xl font-bold text-white mt-1 group-hover:underline decoration-white/30 underline-offset-4 transition-all">Rallye Vidéo</h3>
+                    </div>
+                </a>
+
+                <a href="projects/au-dela-du-vide.html" class="project-card group block fade-in" data-category="short">
+                    <div class="card-media-container rounded-xl border border-white/5 group-hover:border-white/20 transition-all mb-4">
+                        <video autoplay loop muted playsinline class="card-media">
+                            <source src="Assets/CM.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold tracking-widest text-indigo-400 uppercase">Court-Métrage</span>
+                        <h3 class="text-xl font-bold text-white mt-1 group-hover:underline decoration-white/30 underline-offset-4 transition-all">Au-delà du vide</h3>
+                    </div>
+                </a>
+
+                <a href="projects/night-ride.html" class="project-card group block fade-in" data-category="perso">
+                    <div class="card-media-container rounded-xl border border-white/5 group-hover:border-white/20 transition-all mb-4">
+                        <video autoplay loop muted playsinline class="card-media">
+                            <source src="Assets/night-ride.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold tracking-widest text-purple-400 uppercase">Projet Perso</span>
                         <h3 class="text-xl font-bold text-white mt-1 group-hover:underline decoration-white/30 underline-offset-4 transition-all">Night Drive</h3>
                     </div>
                 </a>
@@ -135,105 +173,68 @@
                         </video>
                     </div>
                     <div>
-                        <span class="text-xs font-bold tracking-widest text-indigo-400 uppercase">Concept</span>
+                        <span class="text-xs font-bold tracking-widest text-purple-400 uppercase">Projet Perso</span>
                         <h3 class="text-xl font-bold text-white mt-1 group-hover:underline decoration-white/30 underline-offset-4 transition-all">Page Blanche</h3>
                     </div>
                 </a>
 
-
-                <a href="projects/badcar.html" class="project-card group block fade-in" data-category="uni">
-                    <div class="card-media-container rounded-xl border border-white/5 group-hover:border-white/20 transition-all mb-4">
-                        <video autoplay loop muted playsinline class="card-media">
-                            <source src="Assets/badcar.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div>
-                        <span class="text-xs font-bold tracking-widest text-emerald-400 uppercase">Fiction</span>
-                        <h3 class="text-xl font-bold text-white mt-1 group-hover:underline decoration-white/30 underline-offset-4 transition-all">Bad Car</h3>
-                    </div>
-                </a>
-
-                <a href="projects/au-dela-du-vide.html" class="project-card group block fade-in" data-category="uni">
-                    <div class="card-media-container rounded-xl border border-white/5 group-hover:border-white/20 transition-all mb-4">
-                        <video autoplay loop muted playsinline class="card-media">
-                            <source src="Assets/CM.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div>
-                        <span class="text-xs font-bold tracking-widest text-emerald-400 uppercase">Court Métrage</span>
-                        <h3 class="text-xl font-bold text-white mt-1 group-hover:underline decoration-white/30 underline-offset-4 transition-all">Au-delà du vide</h3>
-                    </div>
-                </a>
-
-                <a href="projects/pub.html" class="project-card group block fade-in" data-category="uni">
-                    <div class="card-media-container rounded-xl border border-white/5 group-hover:border-white/20 transition-all mb-4">
-                        <video autoplay loop muted playsinline class="card-media">
-                            <source src="Assets/pub.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div>
-                        <span class="text-xs font-bold tracking-widest text-emerald-400 uppercase">Publicité</span>
-                        <h3 class="text-xl font-bold text-white mt-1 group-hover:underline decoration-white/30 underline-offset-4 transition-all">Spot Publicitaire</h3>
-                    </div>
-                </a>
-
-                <a href="projects/FRAMMI.html" class="project-card group block fade-in" data-category="uni">
-                    <div class="card-media-container rounded-xl border border-white/5 group-hover:border-white/20 transition-all mb-4">
-                        <video autoplay loop muted playsinline class="card-media">
-                            <source src="Assets/FRAMMI_1.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div>
-                        <span class="text-xs font-bold tracking-widest text-emerald-400 uppercase">Événement</span>
-                        <h3 class="text-xl font-bold text-white mt-1 group-hover:underline decoration-white/30 underline-offset-4 transition-all">FRAMMI</h3>
-                    </div>
-                </a>
-
-                <a href="projects/rallye.html" class="project-card group block fade-in" data-category="uni">
-                    <div class="card-media-container rounded-xl border border-white/5 group-hover:border-white/20 transition-all mb-4">
-                        <video autoplay loop muted playsinline class="card-media">
-                            <source src="Assets/rallye.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div>
-                        <span class="text-xs font-bold tracking-widest text-emerald-400 uppercase">Challenge</span>
-                        <h3 class="text-xl font-bold text-white mt-1 group-hover:underline decoration-white/30 underline-offset-4 transition-all">Rallye Vidéo</h3>
-                    </div>
-                </a>
-                
-                <a href="projects/lefleo.html" class="project-card group block fade-in" data-category="uni">
-                    <div class="card-media-container rounded-xl border border-white/5 group-hover:border-white/20 transition-all mb-4">
-                        <video autoplay loop muted playsinline class="card-media">
-                            <source src="Assets/lefleo.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div>
-                        <span class="text-xs font-bold tracking-widest text-emerald-400 uppercase">Technique</span>
-                        <h3 class="text-xl font-bold text-white mt-1 group-hover:underline decoration-white/30 underline-offset-4 transition-all">Le Fléo</h3>
-                    </div>
-                </a>
-
-                <a href="projects/game-and-vibes.html" class="project-card group block fade-in" data-category="uni">
-                    <div class="card-media-container rounded-xl border border-white/5 group-hover:border-white/20 transition-all mb-4">
-                        <video autoplay loop muted playsinline class="card-media">
-                            <source src="Assets/GV_1.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div>
-                        <span class="text-xs font-bold tracking-widest text-emerald-400 uppercase">Identité Visuelle</span>
-                        <h3 class="text-xl font-bold text-white mt-1 group-hover:underline decoration-white/30 underline-offset-4 transition-all">Game & Vibes</h3>
-                    </div>
-                </a>
-
-                <a href="projects/lumieres-interview.html" class="project-card group block fade-in" data-category="uni">
+                <a href="projects/lumieres-interview.html" class="project-card group block fade-in" data-category="tech">
                     <div class="card-media-container rounded-xl border border-white/5 group-hover:border-white/20 transition-all mb-4">
                         <video autoplay loop muted playsinline class="card-media">
                             <source src="Assets/INTERVIEW.mp4" type="video/mp4">
                         </video>
                     </div>
                     <div>
-                        <span class="text-xs font-bold tracking-widest text-emerald-400 uppercase">Studio</span>
+                        <span class="text-xs font-bold tracking-widest text-blue-400 uppercase">Technique Studio</span>
                         <h3 class="text-xl font-bold text-white mt-1 group-hover:underline decoration-white/30 underline-offset-4 transition-all">Lumières Interview</h3>
+                    </div>
+                </a>
+
+                <a href="projects/pub.html" class="project-card group block fade-in" data-category="tech">
+                    <div class="card-media-container rounded-xl border border-white/5 group-hover:border-white/20 transition-all mb-4">
+                        <video autoplay loop muted playsinline class="card-media">
+                            <source src="Assets/pub.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold tracking-widest text-blue-400 uppercase">Publicité</span>
+                        <h3 class="text-xl font-bold text-white mt-1 group-hover:underline decoration-white/30 underline-offset-4 transition-all">Spot Sony a6700</h3>
+                    </div>
+                </a>
+
+                <a href="projects/lefleo.html" class="project-card group block fade-in" data-category="tech">
+                    <div class="card-media-container rounded-xl border border-white/5 group-hover:border-white/20 transition-all mb-4">
+                        <video autoplay loop muted playsinline class="card-media">
+                            <source src="Assets/lefleo.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold tracking-widest text-blue-400 uppercase">Plan-Séquence</span>
+                        <h3 class="text-xl font-bold text-white mt-1 group-hover:underline decoration-white/30 underline-offset-4 transition-all">Le Fléo</h3>
+                    </div>
+                </a>
+
+                <a href="projects/badcar.html" class="project-card group block fade-in" data-category="tech">
+                    <div class="card-media-container rounded-xl border border-white/5 group-hover:border-white/20 transition-all mb-4">
+                        <video autoplay loop muted playsinline class="card-media">
+                            <source src="Assets/badcar.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold tracking-widest text-blue-400 uppercase">Sound Design</span>
+                        <h3 class="text-xl font-bold text-white mt-1 group-hover:underline decoration-white/30 underline-offset-4 transition-all">Bad Car</h3>
+                    </div>
+                </a>
+
+                <a href="projects/game-and-vibes.html" class="project-card group block fade-in" data-category="media">
+                    <div class="card-media-container rounded-xl border border-white/5 group-hover:border-white/20 transition-all mb-4">
+                        <video autoplay loop muted playsinline class="card-media">
+                            <source src="Assets/GV_1.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold tracking-widest text-orange-400 uppercase">Média</span>
+                        <h3 class="text-xl font-bold text-white mt-1 group-hover:underline decoration-white/30 underline-offset-4 transition-all">Game & Vibes</h3>
                     </div>
                 </a>
 
@@ -242,11 +243,10 @@
                         <img src="Assets/PHOTO_DA.jpg" class="card-media" alt="Shooting Arcteryx">
                     </div>
                     <div>
-                        <span class="text-xs font-bold tracking-widest text-rose-400 uppercase">Campagne</span>
+                        <span class="text-xs font-bold tracking-widest text-rose-400 uppercase">Photo • DA</span>
                         <h3 class="text-xl font-bold text-white mt-1 group-hover:underline decoration-white/30 underline-offset-4 transition-all">Arc'teryx</h3>
                     </div>
                 </a>
-
 
             </div>
         </section>
@@ -286,22 +286,31 @@
 
     <script>
         function filterProjects(category) {
+            // 1. Gestion des boutons (Style actif/inactif)
             const buttons = document.querySelectorAll('.filter-btn');
             buttons.forEach(btn => {
                 btn.classList.remove('bg-white', 'text-black');
                 btn.classList.add('bg-transparent', 'text-text-muted');
-                if (btn.getAttribute('onclick').includes(category)) {
+                
+                // Si le bouton cliqué correspond à la catégorie, on l'active
+                if (btn.getAttribute('onclick').includes(`'${category}'`)) {
                     btn.classList.remove('bg-transparent', 'text-text-muted');
                     btn.classList.add('bg-white', 'text-black');
                 }
             });
 
+            // 2. Filtrage des cartes
             const projects = document.querySelectorAll('.project-card');
             projects.forEach(card => {
-                card.classList.remove('fade-in'); 
-                void card.offsetWidth; 
+                // On récupère les catégories de la carte (ex: "event short")
+                const cardCategories = card.getAttribute('data-category');
                 
-                if (category === 'all' || card.getAttribute('data-category') === category) {
+                // Reset de l'animation
+                card.classList.remove('fade-in'); 
+                void card.offsetWidth; // Force le reflow pour relancer l'anim
+                
+                // LOGIQUE : Afficher si 'all' OU si la catégorie demandée est incluse dans les tags de la carte
+                if (category === 'all' || cardCategories.includes(category)) {
                     card.style.display = 'block';
                     card.classList.add('fade-in');
                 } else {
@@ -312,5 +321,3 @@
     </script>
 </body>
 </html>
-
-
