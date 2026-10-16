@@ -8,9 +8,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -20,10 +18,10 @@
             theme: {
                 extend: {
                     colors: {
-                        'bg-main': '#121212',
-                        'bg-card': '#18181b', 
+                        'bg-main': '#0a0e1c',
+                        'bg-card': '#0d1226', 
                         'text-main': '#EDEDED',
-                        'text-muted': '#A1A1AA',
+                        'text-muted': '#9aa4c8',
                         'primary-orange': '#FB923C',
                         'primary-green': '#34D399',
                         'primary-blue': '#60A5FA',
@@ -40,81 +38,117 @@
 </head>
 <body class="bg-bg-main text-text-main font-sans antialiased">
 
-    <div class="max-w-6xl mx-auto px-6 md:px-12 pb-20">
+    <div class="clouds-layer"></div>
 
-        <header class="py-12 md:py-20 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-            <div>
-                <h1 class="text-4xl md:text-5xl font-bold tracking-tight">Lucas Matthes</h1>
-                <p class="text-text-muted mt-2 text-lg font-light tracking-wide">Vidéaste</p>
+    <!-- NAVIGATION -->
+    <nav class="sticky top-4 z-50 px-6">
+        <div class="nav-pill max-w-5xl mx-auto rounded-full px-6 py-3 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3">
+                <span class="w-9 h-9 rounded-full bg-gradient-to-br from-primary-blue/60 to-primary-purple/60 flex items-center justify-center text-white font-extrabold text-sm">LM</span>
+                <span class="font-bold tracking-tight text-white hidden sm:block">Lucas Matthes</span>
+            </a>
+            <ul class="flex gap-6 md:gap-8 text-sm font-medium text-text-muted">
+                <li><a href="#" class="hover:text-white transition-colors duration-300 text-white">Accueil</a></li>
+                <li><a href="about.html" class="hover:text-white transition-colors duration-300">À propos</a></li>
+                <li><a href="#work" class="hover:text-white transition-colors duration-300">Projets</a></li>
+                <li><a href="#contact" class="hover:text-white transition-colors duration-300">Contact</a></li>
+            </ul>
+            <a href="Assets/CV - Matthes.pdf" target="_blank" class="hidden md:inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white text-black text-sm font-bold hover:bg-zinc-200 transition-all hover:-translate-y-0.5 shadow-lg shadow-black/30">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                CV
+            </a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="relative pt-24 md:pt-36 pb-20 px-6">
+        <div class="hero-glow"></div>
+        <div class="max-w-4xl mx-auto text-center fade-in relative z-10">
+            <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm text-xs font-semibold tracking-widest uppercase text-primary-blue mb-8">
+                <span class="w-1.5 h-1.5 rounded-full bg-primary-blue animate-pulse"></span>
+                Vidéaste & monteur
+            </span>
+            <h1 class="text-5xl md:text-7xl font-black tracking-tight text-white leading-[1.05]">
+                Des images qui
+                <span class="bg-gradient-to-r from-primary-blue via-primary-purple to-primary-pink bg-clip-text text-transparent">racontent des histoires</span>
+            </h1>
+            <p class="mt-8 text-lg md:text-xl text-text-muted max-w-2xl mx-auto font-light leading-relaxed">
+                Je suis Lucas Matthes, vidéaste. Court-métrages, films de fiction et créations de contenu — explorez mon univers à travers la nuit.
+            </p>
+            <div class="mt-10 flex flex-wrap justify-center items-center gap-4">
+                <a href="#work" class="px-8 py-4 bg-white text-black font-bold rounded-full hover:bg-zinc-200 transition-all shadow-xl shadow-black/40 hover:-translate-y-1">
+                    Découvrir mes projets
+                </a>
+                <a href="#contact" class="px-8 py-4 font-bold rounded-full border border-white/15 bg-white/5 backdrop-blur-sm text-white hover:bg-white/10 transition-all hover:-translate-y-1">
+                    Me contacter
+                </a>
             </div>
-            
-            <nav>
-                <ul class="flex gap-8 text-sm font-medium text-text-muted">
-                    <li><a href="#" class="hover:text-white transition-colors duration-300 text-white">Accueil</a></li>
-                    <li><a href="about.html" class="hover:text-white transition-colors duration-300">À propos</a></li>
-                    <li><a href="#work" class="hover:text-white transition-colors duration-300">Projets</a></li>
-                    <li><a href="#contact" class="hover:text-white transition-colors duration-300">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
-        
-        <div class="w-full h-px bg-white/10 mb-16"></div>
+        </div>
+    </section>
 
-        <!-- PROJETS MISE EN AVANT -->
-        
-        <!-- Au-delà du vide -->
-        <section class="mb-24">
+    <!-- PROJETS MISE EN AVANT (aperçu "app" façon image d'inspiration) -->
+    <section class="max-w-6xl mx-auto px-6 md:px-12 pb-24 fade-in">
+        <div class="rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl shadow-black/50 relative bg-white/5 backdrop-blur-sm p-3 md:p-4">
+            
+            <!-- Au-delà du vide -->
             <a href="projects/au-dela-du-vide.html" class="group block">
-                <div class="relative rounded-3xl overflow-hidden border border-white/5 shadow-lg mb-8">
+                <div class="relative rounded-[1.5rem] overflow-hidden">
                     <div class="card-media-container">
                         <video autoplay loop muted playsinline class="card-media">
                             <source src="Assets/CM.mp4" type="video/mp4">
                         </video>
                     </div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                     <div class="absolute bottom-8 left-8 right-8">
-                        <span class="text-xs font-bold tracking-widest text-primary-orange uppercase bg-black/30 px-3 py-1 rounded-full backdrop-blur-sm">Projet mis en avant</span>
+                        <span class="text-xs font-bold tracking-widest text-primary-orange uppercase bg-black/40 px-3 py-1 rounded-full backdrop-blur-sm border border-white/10">Projet mis en avant</span>
                         <h2 class="text-3xl md:text-4xl font-bold text-white mt-4">Au-delà du vide</h2>
                         <p class="text-text-muted mt-2 text-lg">Court-métrage - Fiction</p>
                     </div>
                 </div>
             </a>
-        </section>
+        </div>
 
         <!-- Dompteur Dompté -->
-        <section class="mb-24">
+        <div class="mt-6 rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl shadow-black/50 relative bg-white/5 backdrop-blur-sm p-3 md:p-4">
             <a href="projects/dompteur-dompte.html" class="group block">
-                <div class="relative rounded-3xl overflow-hidden border border-white/5 shadow-lg mb-8">
+                <div class="relative rounded-[1.5rem] overflow-hidden">
                     <div class="card-media-container">
                         <video autoplay loop muted playsinline class="card-media">
                             <source src="Assets/Dompteur Dompté.mp4" type="video/mp4">
                         </video>
                     </div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                     <div class="absolute bottom-8 left-8 right-8">
-                        <span class="text-xs font-bold tracking-widest text-primary-orange uppercase bg-black/30 px-3 py-1 rounded-full backdrop-blur-sm">Projet mis en avant</span>
+                        <span class="text-xs font-bold tracking-widest text-primary-orange uppercase bg-black/40 px-3 py-1 rounded-full backdrop-blur-sm border border-white/10">Projet mis en avant</span>
                         <h2 class="text-3xl md:text-4xl font-bold text-white mt-4">Dompteur Dompté</h2>
                         <p class="text-text-muted mt-2 text-lg">Projet de fin d'études - Fiction</p>
                     </div>
                 </div>
             </a>
-        </section>
+        </div>
+    </section>
+
+    <div class="max-w-6xl mx-auto px-6 md:px-12 pb-20">
 
         <section id="work" class="mb-32">
+            <div class="flex items-baseline justify-between mb-10">
+                <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-white">Tous les projets</h2>
+                <span class="text-text-muted text-sm font-medium">15 réalisations</span>
+            </div>
             
             <div class="flex flex-wrap justify-center md:justify-start gap-3 mb-12">
                 <button onclick="filterProjects('all')" class="filter-btn active px-5 py-2 rounded-full text-sm font-semibold border border-white/10 bg-white text-black transition-all" data-category="all">Tout</button>
-                <button onclick="filterProjects('media')" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold border border-white/10 bg-transparent text-text-muted hover:text-white hover:border-white/20 transition-all" data-category="media">Multimédia & création de contenu</button>
-                <button onclick="filterProjects('fiction')" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold border border-white/10 bg-transparent text-text-muted hover:text-white hover:border-white/20 transition-all" data-category="fiction">Fiction</button>
-                <button onclick="filterProjects('alternance')" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold border border-white/10 bg-transparent text-text-muted hover:text-white hover:border-white/20 transition-all" data-category="alternance">Alternance</button>
-                <button onclick="filterProjects('photo')" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold border border-white/10 bg-transparent text-text-muted hover:text-white hover:border-white/20 transition-all" data-category="photo">Photo</button>
+                <button onclick="filterProjects('media')" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold border border-white/10 bg-white/5 backdrop-blur-sm text-text-muted hover:text-white hover:border-white/20 transition-all" data-category="media">Multimédia & création de contenu</button>
+                <button onclick="filterProjects('fiction')" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold border border-white/10 bg-white/5 backdrop-blur-sm text-text-muted hover:text-white hover:border-white/20 transition-all" data-category="fiction">Fiction</button>
+                <button onclick="filterProjects('alternance')" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold border border-white/10 bg-white/5 backdrop-blur-sm text-text-muted hover:text-white hover:border-white/20 transition-all" data-category="alternance">Alternance</button>
+                <button onclick="filterProjects('photo')" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold border border-white/10 bg-white/5 backdrop-blur-sm text-text-muted hover:text-white hover:border-white/20 transition-all" data-category="photo">Photo</button>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="project-container">
 
                 <!-- Au-delà du vide - Fiction (dans la liste) -->
                 <a href="projects/au-dela-du-vide.html" class="project-card group block fade-in" data-category="fiction">
-                    <div class="card-media-container rounded-xl border border-white/5 group-hover:border-white/20 transition-all mb-4">
+                    <div class="card-media-container rounded-2xl border border-white/10 group-hover:border-primary-blue/40 group-hover:shadow-lg group-hover:shadow-primary-blue/10 transition-all mb-4">
                         <video autoplay loop muted playsinline class="card-media">
                             <source src="Assets/CM.mp4" type="video/mp4">
                         </video>
@@ -127,7 +161,7 @@
 
                 <!-- Dompteur Dompté - Fiction (dans la liste) -->
                 <a href="projects/dompteur-dompte.html" class="project-card group block fade-in" data-category="fiction">
-                    <div class="card-media-container rounded-xl border border-white/5 group-hover:border-white/20 transition-all mb-4">
+                    <div class="card-media-container rounded-2xl border border-white/10 group-hover:border-primary-blue/40 group-hover:shadow-lg group-hover:shadow-primary-blue/10 transition-all mb-4">
                         <video autoplay loop muted playsinline class="card-media">
                             <source src="Assets/Dompteur Dompté.mp4" type="video/mp4">
                         </video>
@@ -140,7 +174,7 @@
 
                 <!-- FRAMMI Awards - Multimédia & création de contenu -->
                 <a href="projects/FRAMMI.html" class="project-card group block fade-in" data-category="media">
-                    <div class="card-media-container rounded-xl border border-white/5 group-hover:border-white/20 transition-all mb-4">
+                    <div class="card-media-container rounded-2xl border border-white/10 group-hover:border-primary-green/40 group-hover:shadow-lg group-hover:shadow-primary-green/10 transition-all mb-4">
                         <video autoplay loop muted playsinline class="card-media">
                             <source src="Assets/FRAMMI_1.mp4" type="video/mp4">
                         </video>
@@ -153,7 +187,7 @@
 
                 <!-- Rallye Vidéo - Multimédia & création de contenu -->
                 <a href="projects/rallye.html" class="project-card group block fade-in" data-category="media">
-                    <div class="card-media-container rounded-xl border border-white/5 group-hover:border-white/20 transition-all mb-4">
+                    <div class="card-media-container rounded-2xl border border-white/10 group-hover:border-primary-green/40 group-hover:shadow-lg group-hover:shadow-primary-green/10 transition-all mb-4">
                         <video autoplay loop muted playsinline class="card-media">
                             <source src="Assets/rallye5.mp4" type="video/mp4">
                         </video>
@@ -166,7 +200,7 @@
 
                 <!-- Bavar'dé - Multimédia & création de contenu -->
                 <a href="projects/bavarde.html" class="project-card group block fade-in" data-category="media">
-                    <div class="card-media-container rounded-xl border border-white/5 group-hover:border-white/20 transition-all mb-4">
+                    <div class="card-media-container rounded-2xl border border-white/10 group-hover:border-primary-green/40 group-hover:shadow-lg group-hover:shadow-primary-green/10 transition-all mb-4">
                         <video autoplay loop muted playsinline class="card-media">
                             <source src="Assets/GV_1.mp4" type="video/mp4">
                         </video>
@@ -179,7 +213,7 @@
 
                 <!-- Night Drive - Fiction -->
                 <a href="projects/night-drive.html" class="project-card group block fade-in" data-category="fiction">
-                    <div class="card-media-container rounded-xl border border-white/5 group-hover:border-white/20 transition-all mb-4">
+                    <div class="card-media-container rounded-2xl border border-white/10 group-hover:border-primary-blue/40 group-hover:shadow-lg group-hover:shadow-primary-blue/10 transition-all mb-4">
                         <video autoplay loop muted playsinline class="card-media">
                             <source src="Assets/night-drive.mp4" type="video/mp4">
                         </video>
@@ -192,7 +226,7 @@
 
                 <!-- Page Blanche - Fiction -->
                 <a href="projects/page-blanche.html" class="project-card group block fade-in" data-category="fiction">
-                    <div class="card-media-container rounded-xl border border-white/5 group-hover:border-white/20 transition-all mb-4">
+                    <div class="card-media-container rounded-2xl border border-white/10 group-hover:border-primary-blue/40 group-hover:shadow-lg group-hover:shadow-primary-blue/10 transition-all mb-4">
                         <video autoplay loop muted playsinline class="card-media">
                             <source src="Assets/page-blanche.mp4" type="video/mp4">
                         </video>
@@ -205,7 +239,7 @@
 
                 <!-- Lumières Interview - Fiction -->
                 <a href="projects/lumieres-interview.html" class="project-card group block fade-in" data-category="fiction">
-                    <div class="card-media-container rounded-xl border border-white/5 group-hover:border-white/20 transition-all mb-4">
+                    <div class="card-media-container rounded-2xl border border-white/10 group-hover:border-primary-blue/40 group-hover:shadow-lg group-hover:shadow-primary-blue/10 transition-all mb-4">
                         <video autoplay loop muted playsinline class="card-media">
                             <source src="Assets/INTERVIEW.mp4" type="video/mp4">
                         </video>
@@ -218,7 +252,7 @@
 
                 <!-- Spot Sony a6700 - Fiction -->
                 <a href="projects/pub.html" class="project-card group block fade-in" data-category="fiction">
-                    <div class="card-media-container rounded-xl border border-white/5 group-hover:border-white/20 transition-all mb-4">
+                    <div class="card-media-container rounded-2xl border border-white/10 group-hover:border-primary-blue/40 group-hover:shadow-lg group-hover:shadow-primary-blue/10 transition-all mb-4">
                         <video autoplay loop muted playsinline class="card-media">
                             <source src="Assets/pub.mp4" type="video/mp4">
                         </video>
@@ -231,7 +265,7 @@
 
                 <!-- Le Fléo - Fiction -->
                 <a href="projects/lefleo.html" class="project-card group block fade-in" data-category="fiction">
-                    <div class="card-media-container rounded-xl border border-white/5 group-hover:border-white/20 transition-all mb-4">
+                    <div class="card-media-container rounded-2xl border border-white/10 group-hover:border-primary-blue/40 group-hover:shadow-lg group-hover:shadow-primary-blue/10 transition-all mb-4">
                         <video autoplay loop muted playsinline class="card-media">
                             <source src="Assets/lefleo.mp4" type="video/mp4">
                         </video>
@@ -244,7 +278,7 @@
 
                 <!-- Bad Car - Fiction -->
                 <a href="projects/badcar.html" class="project-card group block fade-in" data-category="fiction">
-                    <div class="card-media-container rounded-xl border border-white/5 group-hover:border-white/20 transition-all mb-4">
+                    <div class="card-media-container rounded-2xl border border-white/10 group-hover:border-primary-blue/40 group-hover:shadow-lg group-hover:shadow-primary-blue/10 transition-all mb-4">
                         <video autoplay loop muted playsinline class="card-media">
                             <source src="Assets/badcar.mp4" type="video/mp4">
                         </video>
@@ -257,7 +291,7 @@
 
                 <!-- Teasers - Alternance -->
                 <a href="projects/teasers.html" class="project-card group block fade-in" data-category="alternance">
-                    <div class="card-media-container rounded-xl border border-white/5 group-hover:border-white/20 transition-all mb-4">
+                    <div class="card-media-container rounded-2xl border border-white/10 group-hover:border-primary-purple/40 group-hover:shadow-lg group-hover:shadow-primary-purple/10 transition-all mb-4">
                         <video autoplay loop muted playsinline class="card-media">
                             <source src="Assets/Teaser Suédois.mp4" type="video/mp4">
                         </video>
@@ -270,7 +304,7 @@
 
                 <!-- Interviews - Alternance -->
                 <a href="projects/interviews.html" class="project-card group block fade-in" data-category="alternance">
-                    <div class="card-media-container rounded-xl border border-white/5 group-hover:border-white/20 transition-all mb-4">
+                    <div class="card-media-container rounded-2xl border border-white/10 group-hover:border-primary-purple/40 group-hover:shadow-lg group-hover:shadow-primary-purple/10 transition-all mb-4">
                         <video autoplay loop muted playsinline class="card-media">
                             <source src="Assets/Alexandre.mp4" type="video/mp4">
                         </video>
@@ -283,7 +317,7 @@
 
                 <!-- E-learning - Alternance -->
                 <a href="projects/e-learning.html" class="project-card group block fade-in" data-category="alternance">
-                    <div class="card-media-container rounded-xl border border-white/5 group-hover:border-white/20 transition-all mb-4 placeholder-container">
+                    <div class="card-media-container rounded-2xl border border-white/10 group-hover:border-primary-purple/40 group-hover:shadow-lg group-hover:shadow-primary-purple/10 transition-all mb-4 placeholder-container">
                         <svg class="placeholder-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
                         </svg>
@@ -297,7 +331,7 @@
 
                 <!-- Arc'teryx - Photo -->
                 <a href="projects/arcteryx.html" class="project-card group block fade-in" data-category="photo">
-                    <div class="card-media-container rounded-xl border border-white/5 group-hover:border-white/20 transition-all mb-4">
+                    <div class="card-media-container rounded-2xl border border-white/10 group-hover:border-primary-pink/40 group-hover:shadow-lg group-hover:shadow-primary-pink/10 transition-all mb-4">
                         <img src="Assets/PHOTO_DA.jpg" class="card-media" alt="Shooting Arcteryx">
                     </div>
                     <div>
@@ -309,10 +343,11 @@
             </div>
         </section>
 
-        <footer id="contact" class="py-20 border-t border-white/5">
+        <footer id="contact" class="py-20 border-t border-white/10">
             <div class="flex flex-col md:flex-row justify-between items-center gap-10">
                 <div class="text-center md:text-left">
                     <h4 class="text-white font-bold text-xl tracking-tight">Lucas Matthes</h4>
+                    <p class="text-text-muted mt-1 text-sm">Vidéaste — France</p>
                 </div>
                 
                 <div class="flex flex-wrap justify-center items-center gap-8 md:gap-10">
@@ -327,11 +362,13 @@
                     </a>
                 </div>
                 
-                <a href="Assets/CV - Matthes.pdf" target="_blank" class="px-8 py-4 bg-white text-black font-bold rounded-xl hover:bg-zinc-200 transition-all shadow-xl hover:-translate-y-1">
+                <a href="Assets/CV - Matthes.pdf" target="_blank" class="px-8 py-4 bg-white text-black font-bold rounded-full hover:bg-zinc-200 transition-all shadow-xl shadow-black/40 hover:-translate-y-1">
                     Télécharger CV
                 </a>
             </div>
-            <p class="text-center text-white/10 text-xs mt-16 font-mono tracking-widest uppercase">© 2026 Lucas Matthes - Tous droits réservés</p>
+            <p class="text-center text-white/20 text-xs mt-16 font-mono tracking-widest uppercase">
+                © 2026 Lucas Matthes - Tous droits réservés
+            </p>
         </footer>
 
     </div>
@@ -341,7 +378,7 @@
             // 1. Gestion des boutons (Style actif/inactif avec couleur de catégorie)
             const buttons = document.querySelectorAll('.filter-btn');
             buttons.forEach(btn => {
-                btn.classList.remove('bg-white', 'text-black', 'bg-primary-orange', 'bg-primary-green', 'bg-primary-blue', 'bg-primary-purple', 'bg-primary-pink', 'text-white');
+                btn.classList.remove('bg-white', 'text-black', 'bg-primary-orange', 'bg-primary-green', 'bg-primary-blue', 'bg-primary-purple', 'bg-primary-pink', 'text-white', 'bg-white/5', 'backdrop-blur-sm');
                 btn.classList.add('bg-transparent', 'text-text-muted');
                 
                 // Si le bouton cliqué correspond à la catégorie, on l'active avec la bonne couleur
@@ -365,14 +402,12 @@
             // 2. Filtrage des cartes
             const projects = document.querySelectorAll('.project-card');
             projects.forEach(card => {
-                // On récupère les catégories de la carte (ex: "event short")
                 const cardCategories = card.getAttribute('data-category');
                 
                 // Reset de l'animation
                 card.classList.remove('fade-in'); 
                 void card.offsetWidth; // Force le reflow pour relancer l'anim
                 
-                // LOGIQUE : Afficher si 'all' OU si la catégorie demandée est incluse dans les tags de la carte
                 if (category === 'all' || cardCategories.includes(category)) {
                     card.style.display = 'block';
                     card.classList.add('fade-in');
