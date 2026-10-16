@@ -39,13 +39,13 @@
 <body class="bg-bg-main text-text-main font-sans antialiased">
 
     <!-- NAVIGATION -->
-    <nav class="sticky top-4 z-50 px-6">
-        <div class="nav-pill max-w-5xl mx-auto rounded-full px-6 py-3 flex items-center justify-between">
-            <a href="#" class="flex items-center gap-3">
+    <nav class="sticky top-3 sm:top-4 z-50 px-4 sm:px-6">
+        <div class="nav-pill max-w-5xl mx-auto rounded-full px-4 sm:px-6 py-3 flex items-center justify-between gap-3">
+            <a href="#" class="flex items-center gap-2 sm:gap-3 shrink-0">
                 <span class="w-9 h-9 rounded-full bg-gradient-to-br from-primary-blue/60 to-primary-purple/60 flex items-center justify-center text-white font-extrabold text-sm">LM</span>
                 <span class="font-bold tracking-tight text-white hidden sm:block">Lucas Matthes</span>
             </a>
-            <ul class="flex gap-6 md:gap-8 text-sm font-medium text-text-muted">
+            <ul class="flex gap-4 sm:gap-6 md:gap-8 text-xs sm:text-sm font-medium text-text-muted">
                 <li><a href="#" class="hover:text-white transition-colors duration-300 text-white">Accueil</a></li>
                 <li><a href="about.html" class="hover:text-white transition-colors duration-300">À propos</a></li>
                 <li><a href="#work" class="hover:text-white transition-colors duration-300">Projets</a></li>
@@ -59,25 +59,25 @@
     </nav>
 
     <!-- HERO -->
-    <section class="relative pt-24 md:pt-36 pb-20 px-6">
+    <section class="relative overflow-hidden pt-20 md:pt-36 pb-16 md:pb-20 px-6">
         <div class="hero-glow"></div>
         <div class="max-w-4xl mx-auto text-center fade-in relative z-10">
-            <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm text-xs font-semibold tracking-widest uppercase text-primary-blue mb-8">
+            <span class="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm text-[10px] sm:text-xs font-semibold tracking-widest uppercase text-primary-blue mb-6 sm:mb-8">
                 <span class="w-1.5 h-1.5 rounded-full bg-primary-blue animate-pulse"></span>
                 Vidéaste & monteur
             </span>
-            <h1 class="text-5xl md:text-7xl font-black tracking-tight text-white leading-[1.05]">
+            <h1 class="text-4xl sm:text-5xl md:text-7xl font-black tracking-tight text-white leading-[1.08]">
                 Des images qui
                 <span class="bg-gradient-to-r from-primary-blue via-primary-purple to-primary-pink bg-clip-text text-transparent">racontent des histoires</span>
             </h1>
-            <p class="mt-8 text-lg md:text-xl text-text-muted max-w-2xl mx-auto font-light leading-relaxed">
+            <p class="mt-6 sm:mt-8 text-base sm:text-lg md:text-xl text-text-muted max-w-2xl mx-auto font-light leading-relaxed">
                 Je suis Lucas Matthes, vidéaste. Court-métrages, films de fiction et créations de contenu — explorez mon univers à travers la nuit.
             </p>
-            <div class="mt-10 flex flex-wrap justify-center items-center gap-4">
-                <a href="#work" class="px-8 py-4 bg-white text-black font-bold rounded-full hover:bg-zinc-200 transition-all shadow-xl shadow-black/40 hover:-translate-y-1">
+            <div class="mt-8 sm:mt-10 flex flex-wrap justify-center items-center gap-3 sm:gap-4">
+                <a href="#work" class="px-6 sm:px-8 py-3.5 sm:py-4 bg-white text-black font-bold text-sm sm:text-base rounded-full hover:bg-zinc-200 transition-all shadow-xl shadow-black/40 hover:-translate-y-1">
                     Découvrir mes projets
                 </a>
-                <a href="#contact" class="px-8 py-4 font-bold rounded-full border border-white/15 bg-white/5 backdrop-blur-sm text-white hover:bg-white/10 transition-all hover:-translate-y-1">
+                <a href="#contact" class="px-6 sm:px-8 py-3.5 sm:py-4 font-bold text-sm sm:text-base rounded-full border border-white/15 bg-white/5 backdrop-blur-sm text-white hover:bg-white/10 transition-all hover:-translate-y-1">
                     Me contacter
                 </a>
             </div>
@@ -134,12 +134,12 @@
                 <span class="text-text-muted text-sm font-medium">15 réalisations</span>
             </div>
             
-            <div class="flex flex-wrap justify-center md:justify-start gap-3 mb-12">
-                <button onclick="filterProjects('all')" class="filter-btn active px-5 py-2 rounded-full text-sm font-semibold border border-white/10 bg-white text-black transition-all" data-category="all">Tout</button>
-                <button onclick="filterProjects('media')" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold border border-white/10 bg-white/5 backdrop-blur-sm text-text-muted hover:text-white hover:border-white/20 transition-all" data-category="media">Multimédia & création de contenu</button>
-                <button onclick="filterProjects('fiction')" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold border border-white/10 bg-white/5 backdrop-blur-sm text-text-muted hover:text-white hover:border-white/20 transition-all" data-category="fiction">Fiction</button>
-                <button onclick="filterProjects('alternance')" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold border border-white/10 bg-white/5 backdrop-blur-sm text-text-muted hover:text-white hover:border-white/20 transition-all" data-category="alternance">Alternance</button>
-                <button onclick="filterProjects('photo')" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold border border-white/10 bg-white/5 backdrop-blur-sm text-text-muted hover:text-white hover:border-white/20 transition-all" data-category="photo">Photo</button>
+            <div class="flex flex-wrap justify-center md:justify-start gap-2 sm:gap-3 mb-10 sm:mb-12">
+                <button onclick="filterProjects('all')" class="filter-btn active px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-semibold border border-white/10 bg-white text-black transition-all" data-category="all">Tout</button>
+                <button onclick="filterProjects('media')" class="filter-btn px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-semibold border border-white/10 bg-white/5 backdrop-blur-sm text-text-muted hover:text-white hover:border-white/20 transition-all" data-category="media">Multimédia & création de contenu</button>
+                <button onclick="filterProjects('fiction')" class="filter-btn px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-semibold border border-white/10 bg-white/5 backdrop-blur-sm text-text-muted hover:text-white hover:border-white/20 transition-all" data-category="fiction">Fiction</button>
+                <button onclick="filterProjects('alternance')" class="filter-btn px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-semibold border border-white/10 bg-white/5 backdrop-blur-sm text-text-muted hover:text-white hover:border-white/20 transition-all" data-category="alternance">Alternance</button>
+                <button onclick="filterProjects('photo')" class="filter-btn px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-semibold border border-white/10 bg-white/5 backdrop-blur-sm text-text-muted hover:text-white hover:border-white/20 transition-all" data-category="photo">Photo</button>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="project-container">
